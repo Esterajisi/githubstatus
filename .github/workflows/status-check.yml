@@ -1,4 +1,4 @@
-name: Check Discord Status
+name: Check Github Status
 on:
   schedule:
     - cron: '*/10 * * * *' # Runs every 10 minutes
@@ -20,7 +20,7 @@ jobs:
 
       - name: Run check
         env:
-          DISCORD_WEBHOOK: ${{ secrets.G_I_T_H_U_B_WEBHOOK }}
+          G_I_T_H_U_B_WEBHOOK: ${{ secrets.G_I_T_H_U_B_WEBHOOK }}
         run: node check-status.js
 
       - name: Commit changes
